@@ -3,7 +3,7 @@
 Play Online
 https://talesmariano.github.io/Draw-Runner/
 
-Download Apk - 
+Download Apk - https://github.com/TalesMariano/Draw-Runner/releases/
 
 Controls
 Use mouse to draw on Notebook
