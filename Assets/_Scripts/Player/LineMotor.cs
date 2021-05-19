@@ -11,7 +11,7 @@ public class LineMotor : MonoBehaviour, IMotor
     private EdgeCollider2D edgeCollider;
     private HingeJoint2D motor;
 
-    private void Start()
+    private void Awake()
     {
         // Get references
         rigidBody = GetComponent<Rigidbody2D>();
