@@ -10,7 +10,7 @@ Use mouse to draw on Notebook
 R - Restart Level
 D - Change Legs
 
-Used 
+Used: 
  - Unity UI Extensions
  - 2d Sprite Shape
  - Kenney Sprites - https://www.kenney.nl/
