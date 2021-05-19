@@ -6,9 +6,9 @@ https://talesmariano.github.io/Draw-Runner/
 Download Apk - https://github.com/TalesMariano/Draw-Runner/releases/
 
 Controls
-Use mouse to draw on Notebook
-R - Restart Level
-D - Change Legs
+-  Use mouse to draw on Notebook
+- R - Restart Level
+- D - Change Legs
 
 Used: 
  - Unity UI Extensions
