@@ -28,15 +28,22 @@ public class SingleSceneManager : MonoBehaviour
     #endregion
 
     [Header("Settings")]
-    public bool pressKeyReloadScene;
+    public bool pressKeyReloadScene = true;
     public KeyCode keyReloadScene = KeyCode.R;
+    public bool pressKeyQuitAplication = true;
+    public KeyCode keyQuitAplication = KeyCode.Escape;
 
     private void Update()
     {
-
         // If reload scene is enabled and key is pressed, reload scene
         if (pressKeyReloadScene && Input.GetKeyDown(keyReloadScene))
             ReloadScene();
+
+
+        if (pressKeyQuitAplication && Input.GetKey(keyQuitAplication))
+        {
+            QuitAplication();
+        }
     }
 
     /// <summary>
@@ -45,5 +52,12 @@ public class SingleSceneManager : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    /// <summary>
+    /// Quit application
+    /// </summary>
+    public void QuitAplication()
+    {
+        Application.Quit();
     }
 }
