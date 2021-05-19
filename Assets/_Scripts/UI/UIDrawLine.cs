@@ -40,7 +40,7 @@ public class UIDrawLine : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             FinishedDrawing();
 
 
-        if (drawing)
+        if (drawing && insideDrawingArea)
             Draw();
     }
 
