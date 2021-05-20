@@ -33,6 +33,8 @@ public class UIDrawLine : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// </summary>
     private void Update()
     {
+#if UNITY_WEBGL
+
         if (Input.GetMouseButtonDown(0))
             BeginDraw();
 
@@ -42,6 +44,25 @@ public class UIDrawLine : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
         if (drawing && insideDrawingArea)
             Draw();
+#else
+        // Mobile input
+        if (Input.touchCount >= 1)
+        {
+            if (Input.touches[0].phase == TouchPhase.Began)
+            {
+                BeginDraw();
+            }
+
+            if (Input.touches[0].phase == TouchPhase.Ended)
+            {
+                FinishedDrawing();
+            }
+        }
+
+        if (drawing)
+            Draw();
+
+#endif
     }
 
 
@@ -80,7 +101,8 @@ public class UIDrawLine : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         drawing = false;
 
-        OnLineFinished.Invoke(uiLine.points.ToArray());
+        if(uiLine.points.Count != 0)    // Only invoke line finished if line is not empty
+            OnLineFinished.Invoke(uiLine.points.ToArray());
 
         uiLine.ClearPoints();   // Clear ui line / make it invisible
     }
